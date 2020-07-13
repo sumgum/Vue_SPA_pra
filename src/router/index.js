@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Article from '../views/Article.vue'
+import Nest from '../views/Nest.vue'
+import Page from '../views/Page.vue'
 
 // Vue Routerを有効化
 Vue.use(VueRouter)
@@ -29,7 +31,21 @@ Vue.use(VueRouter)
     name: 'Article',
     component: Article,
     props: true,
-  }
+  },
+  {
+    path: '/nest/:aid',
+    name: 'Nest',
+    component: Nest,
+    props: true,
+    children: [
+      {
+        path: 'pages/:page_num',
+        name: 'Page',
+        component: Page,
+        props: true,
+      }
+    ]
+  },
 ]
 
 const router = new VueRouter({
