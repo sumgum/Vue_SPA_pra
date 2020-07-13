@@ -4,6 +4,8 @@ import Home from '../views/Home.vue'
 import Article from '../views/Article.vue'
 import Nest from '../views/Nest.vue'
 import Page from '../views/Page.vue'
+import Auth from '../views/Auth.vue'
+import Signin from '../views/Signin.vue'
 
 // Vue Routerを有効化
 Vue.use(VueRouter)
@@ -45,6 +47,21 @@ Vue.use(VueRouter)
         props: true,
       }
     ]
+  },
+  {
+    path: '/signin',
+    name: 'Signin',
+    component: Signin,
+    props: true,
+  },
+  {
+    path: '/auth',
+    name: 'Auth',
+    component: Auth,
+    props: true,
+    meta: {
+      isRequestAuth: true,
+    }
   },
 ]
 
