@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Article from '../views/Article.vue'
 
+// Vue Routerを有効化
 Vue.use(VueRouter)
 
   const routes = [
@@ -16,7 +18,14 @@ Vue.use(VueRouter)
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
+    // コンポーネントの非同期ロード
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+  },
+  {
+    path: '/article/:aid',
+    name: 'Article',
+    component: Article,
+    props: true,
   }
 ]
 
