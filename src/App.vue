@@ -41,13 +41,16 @@
 </style>
 
 <script>
+import {mapState} from 'vuex'
 export default {
   name: 'App',
+  // mapState を使用
   computed: {
     // 現在のカウントを取得
-    count() {
-      return this.$store.state.count
-    }
+    // count() {
+    //   return this.$store.state.count
+    // }
+    ...mapState(['count']),
   },
   methods: {
     minus() {
