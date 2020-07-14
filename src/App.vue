@@ -6,6 +6,11 @@
       <router-link to="/article/108">記事：No.108</router-link> |
       <router-link to="/nest/108">ネストサンプル</router-link>
     </div>
+    <div>
+      <input type="button" value="-" v-on:click="minus" />
+      {{count}}
+      <input type="button" value="+" v-on:click="plus" />
+    </div>
     <router-view/>
     <hr/>
     <router-view name="sub" />
@@ -34,3 +39,23 @@
   color: #42b983;
 }
 </style>
+
+<script>
+export default {
+  name: 'App',
+  computed: {
+    // 現在のカウントを取得
+    count() {
+      return this.$store.state.count
+    }
+  },
+  methods: {
+    minus() {
+      this.$store.commit('minus');
+    },
+    plus() {
+      this.$store.commit('plus');
+    }
+  }
+}
+</script>
