@@ -7,6 +7,7 @@ import Page from '../views/Page.vue'
 import Auth from '../views/Auth.vue'
 import Signin from '../views/Signin.vue'
 import Book from '../views/Book.vue'
+import Payload from '../views/Payload.vue'
 
 // Vue Routerを有効化
 Vue.use(VueRouter)
@@ -68,6 +69,12 @@ Vue.use(VueRouter)
     path: '/book',
     name: 'Book',
     component: Book,
+    props: true,
+  },
+  {
+    path: '/payload',
+    name: 'Payload',
+    component: Payload,
     props: true,
   },
 ]

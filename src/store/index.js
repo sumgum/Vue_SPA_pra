@@ -27,6 +27,9 @@ export default new Vuex.Store({
     },
   },
   mutations: {
+    addBook(state, payload) {
+      state.books.push(payload.book)
+    },
     minus(state) {
       state.count--
     },
