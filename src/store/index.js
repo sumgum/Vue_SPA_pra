@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import {ADD_BOOK} from '../mutation-types'
 
 Vue.use(Vuex)
 
@@ -31,7 +32,7 @@ export default new Vuex.Store({
     updateName(state, name) {
       state.name = name
     },
-    addBook(state, payload) {
+    [ADD_BOOK](state, payload) {
       state.books.push(payload.book)
     },
     minus(state) {
