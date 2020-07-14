@@ -9,6 +9,7 @@
       <router-link to="/payload">Payload</router-link>
     </div>
     <div>
+      <input type="text" id="name" v-model="name">
       <input type="button" value="-" v-on:click="minus" />
       {{count}}
       <input type="button" value="+" v-on:click="plus" />
@@ -48,6 +49,14 @@ export default {
   name: 'App',
   // mapState を使用
   computed: {
+    name: {
+      get() {
+        return this.$store.state.name
+      },
+      set(value) {
+        this.$store.commit('updateName', value)
+      }
+    },
     // 現在のカウントを取得
     // count() {
     //   return this.$store.state.count

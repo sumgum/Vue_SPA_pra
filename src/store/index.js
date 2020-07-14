@@ -8,6 +8,7 @@ export default new Vuex.Store({
   strict: true,
   state: {
     count: 0,
+    name: '',
     books: [
       {
         isbn: '978-4-8222-5389-9',
@@ -27,6 +28,9 @@ export default new Vuex.Store({
     },
   },
   mutations: {
+    updateName(state, name) {
+      state.name = name
+    },
     addBook(state, payload) {
       state.books.push(payload.book)
     },
