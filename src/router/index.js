@@ -6,6 +6,7 @@ import Nest from '../views/Nest.vue'
 import Page from '../views/Page.vue'
 import Auth from '../views/Auth.vue'
 import Signin from '../views/Signin.vue'
+import Book from '../views/Book.vue'
 
 // Vue Routerを有効化
 Vue.use(VueRouter)
@@ -62,6 +63,12 @@ Vue.use(VueRouter)
     meta: {
       isRequestAuth: true,
     }
+  },
+  {
+    path: '/book',
+    name: 'Book',
+    component: Book,
+    props: true,
   },
 ]
 

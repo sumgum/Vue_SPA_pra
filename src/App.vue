@@ -4,7 +4,8 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
       <router-link to="/article/108">記事：No.108</router-link> |
-      <router-link to="/nest/108">ネストサンプル</router-link>
+      <router-link to="/nest/108">ネストサンプル</router-link> |
+      <router-link to="/book">Book</router-link>
     </div>
     <div>
       <input type="button" value="-" v-on:click="minus" />
